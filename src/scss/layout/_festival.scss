@@ -1,0 +1,31 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+//al parecer no es neceario que las importe con la extension .scss
+
+.sobre-festival{
+    padding: 5rem 0;
+    
+    @include m.tablet{
+        @include m.grid(2,5rem)
+    }
+ 
+}
+.contenido-festival{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    h2{
+        margin-bottom: 2rem;
+    }
+    .fecha{
+        color: v.$rosa;
+        font-weight: 700;
+    }
+    p{
+        color: v.$negro;
+    }
+    h2,.fecha,p{
+        text-align: initial;
+    }
+}

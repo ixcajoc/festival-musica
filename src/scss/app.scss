@@ -1,0 +1,8 @@
+//importamos la hoja _variables, no es necesario el _
+//sintaxis anterior:
+//@import 'base/variables';
+// @import 'contenido/contenido';
+
+// sintaxis reciente:
+@use 'base';
+@use 'layout';

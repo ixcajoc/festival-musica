@@ -1,0 +1,34 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.boletos{
+    padding: 5rem 0;
+    background-color: v.$verde;
+
+    .contenedor-boletos{
+        @include m.telefono{
+            @include m.grid(2,2rem)
+        }
+    }
+}
+.basico,.premium {
+    ul{
+        @include m.resetear-lista;
+        background-color: v.$blanco;
+        li{
+            padding: 1rem;
+            border-bottom: solid 1px rgb(164, 164, 164);
+        }
+        .encabezado{
+            background-color: v.$rosa;
+            text-align: center;
+            color: v.$blanco;
+        }
+        .precio{
+            background-color: v.$morado;
+            text-align: center;
+            color: v.$blanco;
+            font-size: 2rem;
+        }
+    }
+}

@@ -1,0 +1,63 @@
+@use 'base/variables.scss' as v;
+@use 'base/mixins.scss' as m;
+.header{
+    background-color: v.$verde;
+    //anidamos el h1 que esta dentro de header
+    @include m.tablet{
+        &.fijo{
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            box-shadow: 0.1rem 0.2rem 0.3rem #333;
+        }
+    }
+    //& concatena un espacio, ejemplo .header fijo, porque ya esta .header y le agrega .fijo
+    //en este ejemplo & concatena .header y agrega fijo, = .header fijo
+
+    h1{
+        color: v.$blanco;
+        text-align: center;
+
+        @include m.tablet{
+            margin: 0;
+        }
+    }
+    .contenido-header{
+        padding: 2rem;
+
+        @include m.tablet{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+}
+
+
+.navegacion-principal{
+    //a los mixins no se les coloca $ al invocarlos
+    @include m.tablet{
+        display: flex;
+        gap: 1rem;
+    }
+
+    a{
+        color: v.$blanco;
+        font-size: 2.4rem;
+        text-align: center;
+        display: block;
+        margin-bottom: 1rem;
+        
+        @include m.tablet {
+            margin: 0;
+        }
+
+        //& para que el hover se compile asi: a:hover
+        &:hover{
+            color: v.$amarillo;
+        }
+
+    }
+    
+}
